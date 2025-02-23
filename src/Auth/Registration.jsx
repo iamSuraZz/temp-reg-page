@@ -15,7 +15,7 @@ import {
   Link,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { countryCodes } from "./countryCodes";
+import { CountryCodes } from "./CountryCodes";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import toast, { Toaster } from "react-hot-toast";
@@ -101,7 +101,7 @@ const Registration = () => {
       if (value === "+1") {
         selectedCountryName = "United States"; // Explicitly set to United States
       } else {
-        const selectedCountry = countryCodes.find((country) => country.code === value);
+        const selectedCountry = CountryCodes.find((country) => country.code === value);
         selectedCountryName = selectedCountry ? selectedCountry.name : "";
       }
   
@@ -549,7 +549,7 @@ const Registration = () => {
                     value={formData.countryCode}
                     onChange={handleChange}
                   >
-                    {countryCodes.map((country) => (
+                    {CountryCodes.map((country) => (
                       <MenuItem key={`${country.code}-${country.name}`} value={country.code}>
                         {`${country.code} (${country.name})`}
                       </MenuItem>
@@ -618,7 +618,7 @@ const Registration = () => {
                 error={!!errors.country}
                 helperText={errors.country}
               >
-                {countryCodes.map((country) => (
+                {CountryCodes.map((country) => (
                   <MenuItem key={`${country.code}-${country.name}`} value={country.name}>
                     {country.name}
                   </MenuItem>

@@ -1,5 +1,5 @@
 // countryCodes.js
-export const countryCodes = [
+export const CountryCodes = [
     { code: "+93", name: "Afghanistan" },
     { code: "+355", name: "Albania" },
     { code: "+213", name: "Algeria" },
