@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { TextField, Button, Grid, MenuItem } from "@mui/material";
-import { countryCodes } from "../../../Auth/countryCodes";
+import { CountryCodes } from "../../../Auth/CountryCodes";
 import Cookies from 'js-cookie';
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -46,7 +46,7 @@ const AddUniversityForm = ({ onClose }) => {
 
   const handlePhoneCodeChange = (e) => {
     const selectedCode = e.target.value;
-    const selectedCountry = countryCodes.find((country) => country.code === selectedCode);
+    const selectedCountry = CountryCodes.find((country) => country.code === selectedCode);
 
     setFormData((prev) => ({
       ...prev,
@@ -127,7 +127,7 @@ const AddUniversityForm = ({ onClose }) => {
         <Grid item xs={12} container spacing={1} alignItems="center">
           <Grid item xs={4}>
             <TextField select name="phoneCode" value={formData.phoneCode} onChange={handlePhoneCodeChange} fullWidth>
-              {countryCodes.map((country) => (
+              {CountryCodes.map((country) => (
                 <MenuItem key={country.code} value={country.code}>
                   {country.name} ({country.code})
                 </MenuItem>
